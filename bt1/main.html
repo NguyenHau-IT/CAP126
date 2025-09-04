@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bt1/style.css">
+</head>
+
+<body>
+    <h1>Nguyễn Việt Hậu - 2280600893</h1>
+    <!-- khung hiện console -->
+    <!-- Họ tên: NGUYỄN VIẾT HẬU -->
+    <!-- MSSV: 2280600893 -->
+    <h2>Bài tập Array JavaScript</h2>
+    <button onclick="showResult()">Hiển thị kết quả</button>
+    <div id="result" style="margin-top:20px; padding:10px; border:1px solid #333; background:#f9f9f9;"></div>
+    <script>
+        // Họ tên: NGUYỄN VIẾT HẬU
+        // MSSV: 2280600893
+
+        const arr = [1, 2, 3, 4, 5];
+
+        function showResult() {
+            const chanLe = arr.map(x => x % 2 === 0 ? 'chẵn' : 'lẻ');
+            const tich = arr.reduce((acc, x) => acc * x, 1);
+            const phanTuChan = arr.filter(x => x % 2 === 0);
+            const coChiaHetCho2 = arr.some(x => x % 2 === 0);
+            const tatCaChiaHetCho3 = arr.every(x => x % 3 === 0);
+
+            let html = '';
+            html += `<b>Mảng:</b> [${arr.join(', ')}]<br>`;
+            html += `<b>map:</b> ${JSON.stringify(chanLe)}<br>`;
+            html += `<b>reduce:</b> ${tich}<br>`;
+            html += `<b>filter:</b> [${phanTuChan.join(', ')}]<br>`;
+            html += `<b>some:</b> ${coChiaHetCho2}<br>`;
+            html += `<b>every:</b> ${tatCaChiaHetCho3}<br>`;
+
+            document.getElementById('result').innerHTML = html;
+        }
+    </script>
+</body>
+
+</html>
